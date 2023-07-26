@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# WebRTC Web App with Signaling Server
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![WebRTC Web App](/screenshots/screenshot.png)
 
-## Available Scripts
+This is a WebRTC-based web application that allows users to establish real-time video communication between two peers. The application uses a signaling server for WebRTC negotiation, enabling peer-to-peer connections.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Real-time video communication using WebRTC technology.
+- Signaling server for WebRTC negotiation.
+- Create an offer and answer to establish a peer-to-peer connection.
+- Add ICE candidates for WebRTC connection establishment.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository:
 
-### `npm test`
+   ```bash
+   git clone https://github.com/your-username/webrtc-web-app.git
+   cd webrtc-web-app
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install dependencies:
 
-### `npm run build`
+   ```bash
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Start the server and client:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   # Start the server (signaling server)
+   node server.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   # Start the client (web application)
+   npm start
+   ```
 
-### `npm run eject`
+4. Open your web browser and navigate to `http://localhost:3000` to access the WebRTC web application.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## How to Use
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. When the application loads, it will request access to your camera and microphone. Grant the required permissions to proceed.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Once the camera stream is accessed, you will see two video boxes on the page. The left one displays your local video stream, while the right one is for the remote video stream.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. To establish a connection between two peers, follow these steps:
 
-## Learn More
+   - Click the "Create Offer" button to create an offer. The local description (SDP) will be displayed in the text area.
+   - Share the local description with the remote peer using your preferred communication channel (e.g., copy and paste, messaging app).
+   - The remote peer should paste the received offer into their text area and click the "Set Remote Description" button.
+   - After setting the remote description, the remote peer should click the "Create Answer" button to generate an answer.
+   - Share the generated answer with the original peer.
+   - Paste the received answer into your text area and click the "Set Remote Description" button.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Once the offer and answer are exchanged, the WebRTC connection will be established, and the video streams will be displayed in both video boxes.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. To add ICE candidates, follow these steps:
 
-### Code Splitting
+   - Both peers should click the "Add Candidates" button to add the ICE candidates.
+   - Share the generated ICE candidates between peers.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+6. The video communication is now established, and you can enjoy real-time video streaming between two peers.
 
-### Analyzing the Bundle Size
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- React: Front-end framework for building user interfaces.
+- WebRTC: Real-time communication technology for audio and video streaming.
+- Socket.io: Library for enabling real-time, bidirectional communication between clients and servers.
+- Tailwind CSS: Utility-first CSS framework for easy and beautiful styling.
 
-### Making a Progressive Web App
+## Contribution
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Contributions to this project are welcome. If you find any issues or have suggestions for improvement, please create a new issue or submit a pull request.
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is licensed under the MIT License. See the [LICENSE](/LICENSE) file for more details.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This README.md template provides an overview of the WebRTC web application, installation instructions, usage guide, technology stack, contribution guidelines, and licensing information. Feel free to customize the content based on your specific project details.
