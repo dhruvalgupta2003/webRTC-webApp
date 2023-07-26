@@ -1,6 +1,5 @@
 # WebRTC Web App with Signaling Server
 
-![WebRTC Web App](/screenshots/screenshot.png.png)
 
 This is a WebRTC-based web application that allows users to establish real-time video communication between two peers. The application uses a signaling server for WebRTC negotiation, enabling peer-to-peer connections.
 
