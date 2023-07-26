@@ -17,7 +17,7 @@ This is a WebRTC-based web application that allows users to establish real-time 
 
    ```bash
    git clone https://github.com/your-username/webrtc-web-app.git
-   cd webrtc-web-app
+   cd webRTC-webApp
    ```
 
 2. Install dependencies:
