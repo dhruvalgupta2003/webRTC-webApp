@@ -15,7 +15,7 @@ This is a WebRTC-based web application that allows users to establish real-time 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/webrtc-web-app.git
+   git clone https://github.com/dhruvalgupta2003/webRTC-webApp.git
    cd webRTC-webApp
    ```
 
